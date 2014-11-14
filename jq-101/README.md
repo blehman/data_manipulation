@@ -25,7 +25,7 @@ you would use `cd ~/Desktop/data_manipulation/jq-101`
 5. run `jq .results[].actor.id` to see each actor id field as a string.
 6. run `jq .results[].actor.id[15:]` to see all characters after the
    15th character of each id field. 
-7. run 1jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sed 's/^/from:/g'` to see a list of rules that you could place into Gnip's powertrack.
+7. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sed 's/^/from:/g'` to see a list of rules that you could place into Gnip's powertrack.
 
 
 
