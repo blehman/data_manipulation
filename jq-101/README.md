@@ -9,8 +9,7 @@ brew install jq
 </pre>
 
 ## Examples
-Some of our clients use the search api to return data. Exampel results are
-included in this directory under `armour.json`.
+Example results from Gnip's search api are included in this directory under `armour.json`.
 
 First make sure that you cd into the location with the data. For
 example, you might have cloned this repo on your Desktop in which case
