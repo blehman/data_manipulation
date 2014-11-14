@@ -1,6 +1,7 @@
 # JQ-101: parsing Twitter data
 Using data often requires parsing json format. [JQ](http://stedolan.github.io/jq/) makes this easy. 
 
+## Install
 The easiest way that I've found to install `jq` is via [homebrew](http://brew.sh/). So open a terminal and run the following:
 
 <pre>
