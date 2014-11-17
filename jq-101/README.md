@@ -58,9 +58,8 @@ about this dataset.
 7. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sed 's/^/from:/g'` to see a list of rules that you could place into Gnip's powertrack.  
 8. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sort | uniq -c` to see counts of the user ids.  
 9. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sort | uniq -c | sort -nr` to see counts of the user ids sorted numerically in reverse order.  
-10. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sort | uniq -c | sort -nr` to see counts of the user ids sorted numerically in reverse order.  
-11. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sort | uniq -c | sort -nr | sed 's/ *$//g' | sed 's/^ *//g'  |  sed 's/ /,/g'` to see counts of the user ids sorted numerically in reverse order as a valid csv.  
-12. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sort | uniq -c | sort -nr | sed 's/ *$//g' | sed 's/^ *//g'  |  sed 's/ /,/g' > my_results.csv` to save the csv.  
+10. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sort | uniq -c | sort -nr | sed 's/ *$//g' | sed 's/^ *//g'  |  sed 's/ /,/g'` to see counts of the user ids sorted numerically in reverse order as a valid csv.  
+11. run `jq .results[].actor.id[15:] armour.json | sed 's/"//g' | sort | uniq -c | sort -nr | sed 's/ *$//g' | sed 's/^ *//g'  |  sed 's/ /,/g' > my_results.csv` to save the csv.  
 
 Now, let's open my_restuls.csv:
 <pre>
