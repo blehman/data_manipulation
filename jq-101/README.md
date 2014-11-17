@@ -64,7 +64,6 @@ about this dataset.
 
 Now, let's open my_restuls.csv:
 <pre>
-cd ~/Desktop/data_manipulation/jq-101
 open my_results.csv
 </pre>
 
