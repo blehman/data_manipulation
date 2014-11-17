@@ -10,7 +10,7 @@ note: I am intentionally avoiding an explaination on how to create and add ssh k
 
 Please *login* to [github.com/login](https://github.com/login), visit [this repo](https://github.com/blehman/data_manipulation), and click "[Fork](https://help.github.com/articles/fork-a-repo/)" in the upper right hand conner to continue this tutorial. See below for an image.
 
-![](https://github.com/blehman/data_manipulation/blob/master/jq-101/imgs/fork.png?raw=true =150x20)
+![](https://github.com/blehman/data_manipulation/blob/master/jq-101/imgs/fork.png?raw=true =50x20)
 
 ## JQ Installation 
 The easiest way that I've found to install `jq` is via [homebrew](http://brew.sh/). So open a terminal and run the following:
