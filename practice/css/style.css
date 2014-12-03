@@ -1,0 +1,22 @@
+rect {
+  stroke:#000;
+  fill:none;
+
+}
+
+.rect1 {
+  stroke:#000;
+  fill:#efa;
+  opacity:0.5;
+}
+
+text {
+  white-space: pre;
+}
+
+circle{
+  stroke:#000;
+  fill:#efa;
+  opacity:0.5;
+  text-anchor:middle;
+}
