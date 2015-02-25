@@ -6,7 +6,7 @@ from collections import defaultdict
 
 #set this value to True if data is: userID1, userID2, color_group1, color_group2
 #set this value to False if data is: userID1, userID2
-color_group = False
+color_group = True
 
 links = []
 nodes = []
