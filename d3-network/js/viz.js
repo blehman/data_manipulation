@@ -1,34 +1,51 @@
 var width = 960,
     height = 500;
 
+var width = 3000,
+    height = 2000;
+
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
     .charge(-120)
     .linkDistance(30)
-    .size([width, height]);
+    .size([width-1000, height-1000]);
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-function color_nodes(source,graph,bool){
-    if (bool){
-      var col = "yellow";
-    }else{
-      var col = "blue";
-    }
-    graph.links.forEach(function(d,i){
-      if (d.source.name == source && d.target.color_group == "1"){
-        d3.select("#ID"+d.target.name)
+function color_source_nodes(graph){
+    var links = graph.links
+    links.forEach(function(d,i){
+      
+      d3.select("#ID"+d.source.name)
         .transition().duration(1000).delay(0)
-        .style("fill",col);
-      }
+        .style("fill","yellow");
+      
+      d3.select("#ID"+d.target.name)
+        .transition().duration(1000).delay(0)
+        .style("fill","red");
     });
 }
 
+function color_nodes(source,graph,bool){
+    var col = {true:"yellow",false:"blue"}
+    if (bool){
+        graph.links.forEach(function(d,i){
+          if (d.source.name == source && d.target.color_group == "1"){
+          d3.select("#ID"+d.target.name)
+          .transition().duration(1000).delay(0)
+          .style("fill","white");
+          }
+        });
+    }else{
+      color_source_nodes(graph)
+    };
+}
+
 d3.json("data/sample.json", function(error, graph) {
-  //console.log(graph)
+  console.log(graph)
 
 
   force
@@ -49,11 +66,9 @@ d3.json("data/sample.json", function(error, graph) {
       .attr("class", "node")
       .attr("r", 5)
       .call(force.drag);
-   
-  d3.selectAll(".node")
-      .style("fill","gray")
-      .transition().duration(1000).delay(2500)
-        .style("fill","yellow");
+
+  // color nodes
+  color_source_nodes(graph);
 
   node.append("title")
       .text(function(d) { return d.name; });
