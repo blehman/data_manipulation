@@ -12,7 +12,19 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-function open_web_page(selected_node){
+function color_nodes(source,graph,bool){
+    if (bool){
+      var col = "yellow";
+    }else{
+      var col = "blue";
+    }
+    graph.links.forEach(function(d,i){
+      if (d.source.name == source && d.target.color_group == "1"){
+        d3.select("#ID"+d.target.name)
+        .transition().duration(1000).delay(0)
+        .style("fill",col);
+      }
+    });
 }
 
 d3.json("data/sample.json", function(error, graph) {
@@ -61,25 +73,9 @@ d3.json("data/sample.json", function(error, graph) {
       var source = event.name
       var element = d3.select(this)
       //console.log(graph.links)
-      if (!element.classed("clicked")){
-          element.classed("clicked",true)
-          graph.links.forEach(function(d,i){
-            if (d.source.name == source && d.target.color_group == "1"){
-                    d3.select("#ID"+d.target.name)
-                      .transition().duration(1000).delay(0)
-                      .style("fill","blue");
-            }
-          });      
-      }else{
-          element.classed("clicked",false)
-          graph.links.forEach(function(d,i){
-            if (d.source.name == source && d.target.color_group == "1"){
-                d3.select("#ID"+d.target.name)
-                    .transition().duration(1000).delay(0)
-                    .style("fill","yellow");
-            }
-      });
-      }
+      color_nodes(source,graph, element.classed("clicked"));
+      element.classed("clicked", !element.classed("clicked"));
   });
+
 });
 
